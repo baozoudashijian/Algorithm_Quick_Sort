@@ -24,7 +24,6 @@ const handlePivot = (arr, start, end) => {
             swap(arr, i, bigStart)
         }
     }
-    console.log(456)
     swap(arr, start, smallEnd)
     return smallEnd
 }
