@@ -1,3 +1,13 @@
+const quickSort = arr => 
+    _quickSort(arr, 0, arr.length)
+
+const _quickSort = (arr, start, end) => {
+    if(end - start <= 1) { return arr }
+    const pivotIndex = handlePivot(arr, start, end)
+    _quickSort(arr, start, pivotIndex)
+    _quickSort(arr, pivotIndex+1, end)
+    return arr
+}
 
 const swap = (arr, a, b) => {
     [arr[a], arr[b] ] = [ arr[b], arr[a] ]
@@ -28,7 +38,5 @@ const handlePivot = (arr, start, end) => {
     return smallEnd // 返回的是基准 - 左边的小于基准，右边的大于基准
 }
 
-// const arr = [32,32,4,2,3,52]
 const arr = [32,4,2,3,52]
-console.log(handlePivot(arr, 0, arr.length))
-console.log(arr)
+console.log(quickSort(arr))
